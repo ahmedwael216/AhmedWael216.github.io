@@ -3,7 +3,7 @@ import "../styles/index.css";
 
 import { getCollection, getEntry, render } from "astro:content";
 import { name, openGraph } from "spectre:globals";
-import ProfilePicture from "../assets/pfp.png";
+import ProfilePicture from "../assets/profile.jpg";
 import Card from "../components/Card.astro";
 import Icon from "../components/Icon.astro";
 import ImageGlow from "../components/ImageGlow.astro";
@@ -31,7 +31,7 @@ const { Content: About } = await render(about!);
 				quality={100}
 				width={120}
 				height={120}
-				src="/blog/images/profile.jpg"
+				src={ProfilePicture}
 				alt="A purple, minimalist looking ghost."
 				loading="eager"
 			/>
