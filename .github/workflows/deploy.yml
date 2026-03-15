@@ -20,9 +20,6 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v5
       - name: Install, build, and upload your site
-        env:
-          GISCUS_REPO_ID: ${{ secrets.GISCUS_REPO_ID }}
-          GISCUS_CATEGORY_ID: ${{ secrets.GISCUS_CATEGORY_ID }}
         uses: withastro/action@v5
           # with:
           # path: . # The root location of your Astro project inside the repository. (optional)

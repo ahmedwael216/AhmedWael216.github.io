@@ -1,16 +1,8 @@
 import sitemap from '@astrojs/sitemap';
 import {defineConfig} from 'astro/config';
 import expressiveCode from 'astro-expressive-code';
-import {loadEnv} from 'vite';
 import spectre from './package/src';
 import {spectreDark} from './src/ec-theme';
-
-console.log('process.env.GISCUS_REPO_ID', process.env.GISCUS_REPO_ID);
-console.log('process.env.GISCUS_CATEGORY_ID', process.env.GISCUS_CATEGORY_ID);
-const {
-    GISCUS_REPO_ID,
-    GISCUS_CATEGORY_ID,
-} = loadEnv(process.env.NODE_ENV!, process.cwd(), '');
 
 // https://astro.build/config
 const config = defineConfig({
@@ -38,9 +30,9 @@ const config = defineConfig({
             },
             giscus: {
                 repository: "ahmedwael216/blog",
-                repositoryId: GISCUS_REPO_ID,
+                repositoryId: "R_kgDORnkNFg",
                 category: "Announcements",
-                categoryId: GISCUS_CATEGORY_ID,
+                categoryId: "DIC_kwDORnkNFs4C4cVQ",
                 mapping: "pathname",
                 strict: false,
                 reactionsEnabled: true,
