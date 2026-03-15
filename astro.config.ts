@@ -44,5 +44,3 @@ const config = defineConfig({
 });
 
 export default config;
-
-//TODO add features from https://djsiddz.github.io/space-ahead/about/
