@@ -30,11 +30,11 @@ const config = defineConfig({
 		mdx(),
 		sitemap(),
 		spectre({
-			name: 'Spectre',
+			name: 'Ahmed Wael',
 			openGraph: {
 				home: {
-					title: 'Spectre',
-					description: 'A minimalistic theme for Astro.',
+					title: 'Ahmed Wael',
+					description: 'A quite place for a noisy brain.',
 				},
 				blog: {
 					title: 'Blog',
@@ -44,17 +44,17 @@ const config = defineConfig({
 					title: 'Projects',
 				},
 			},
-			giscus: {
-				repository: GISCUS_REPO,
-				repositoryId: GISCUS_REPO_ID,
-				category: GISCUS_CATEGORY,
-				categoryId: GISCUS_CATEGORY_ID,
-				mapping: GISCUS_MAPPING as GiscusMapping,
-				strict: GISCUS_STRICT === 'true',
-				reactionsEnabled: GISCUS_REACTIONS_ENABLED === 'true',
-				emitMetadata: GISCUS_EMIT_METADATA === 'true',
-				lang: GISCUS_LANG,
-			},
+			// giscus: {
+			// 	repository: GISCUS_REPO,
+			// 	repositoryId: GISCUS_REPO_ID,
+			// 	category: GISCUS_CATEGORY,
+			// 	categoryId: GISCUS_CATEGORY_ID,
+			// 	mapping: GISCUS_MAPPING as GiscusMapping,
+			// 	strict: GISCUS_STRICT === 'true',
+			// 	reactionsEnabled: GISCUS_REACTIONS_ENABLED === 'true',
+			// 	emitMetadata: GISCUS_EMIT_METADATA === 'true',
+			// 	lang: GISCUS_LANG,
+			// },
 		}),
 	],
 	adapter: node({
@@ -63,3 +63,5 @@ const config = defineConfig({
 });
 
 export default config;
+
+//TODO add features from https://djsiddz.github.io/space-ahead/about/

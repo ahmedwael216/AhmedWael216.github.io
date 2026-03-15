@@ -1,5 +1,17 @@
 [
 	{
 		"id": "guide"
+	},
+	{
+		"id": "Linux"
+	},
+	{
+		"id": "C#"
+	},
+	{
+		"id": "PLT"
+	},
+	{
+		"id": "Non-Tech"
 	}
 ]

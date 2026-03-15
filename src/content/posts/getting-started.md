@@ -6,20 +6,8 @@ createdAt: 12-29-2024
 draft: false
 tags:
   - guide
+  - Non-Tech
 ---
-
-Thanks for going with Spectre as your theme of choice! Let's get you set up. You can create a new Astro project with this theme by running:
-
-```bash
-# npm
-npm create astro@latest -- --template louisescher/spectre
-
-# pnpm
-pnpm create astro@latest --template louisescher/spectre
-
-# yarn
-yarn create astro --template louisescher/spectre
-```
 
 First, a small introduction to the project structure:
 
