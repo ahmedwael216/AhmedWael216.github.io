@@ -6,7 +6,8 @@ import {spectreDark} from './src/ec-theme';
 
 // https://astro.build/config
 const config = defineConfig({
-    site: 'https://ahmedwael216.github.io/blog',
+    site: 'https://ahmedwael216.github.io',
+    base: 'blog',
     output: 'static',
     integrations: [
         expressiveCode({

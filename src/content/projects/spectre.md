@@ -32,7 +32,7 @@ It was designed after my website as part of my annual tradition to re-design it,
 
 Spectre scores 100 Points on every Lighthouse benchmark (Performance, Accessibility, Best Practices, SEO):
 
-![A picture showing a 100/100 Lighthouse score on all tests](/img/lighthouse.png)
+![A picture showing a 100/100 Lighthouse score on all tests](/blog/img/lighthouse.png)
 
 ## Speedy
 

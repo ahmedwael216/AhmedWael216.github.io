@@ -5,14 +5,14 @@ import Icon from "./Icon.astro";
 const path = Astro.url.pathname;
 ---
 <nav>
-  <a class="site-title" href="/">{name}</a>
+  <a class="site-title" href="/blog">{name}</a>
   <ul>
     <li>
-      <a href="/blog" class:list={{ active: path.startsWith('/blog') }}>Posts</a>
+      <a href="/blog/posts" class:list={{ active: path.startsWith('/posts') }}>Posts</a>
     </li>
     <li class="nav-separator">/</li>
     <li>
-      <a href="/projects" class:list={{ active: path.startsWith('/projects') }}>Projects</a>
+      <a href="/blog/projects" class:list={{ active: path.startsWith('/projects') }}>Projects</a>
     </li>
     <li class="nav-separator">/</li>
     <li>
