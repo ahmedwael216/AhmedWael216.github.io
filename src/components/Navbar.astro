@@ -5,14 +5,14 @@ import Icon from "./Icon.astro";
 const path = Astro.url.pathname;
 ---
 <nav>
-  <a class="site-title" href="/blog">{name}</a>
+  <a class="site-title" href="/">{name}</a>
   <ul>
     <li>
-      <a href="/blog/posts" class:list={{ active: path.startsWith('/posts') }}>Posts</a>
+      <a href="/blogs" class:list={{ active: path.startsWith('/posts') }}>Blogs</a>
     </li>
     <li class="nav-separator">/</li>
     <li>
-      <a href="/blog/projects" class:list={{ active: path.startsWith('/projects') }}>Projects</a>
+      <a href="/projects" class:list={{ active: path.startsWith('/projects') }}>Projects</a>
     </li>
     <li class="nav-separator">/</li>
     <li>
@@ -79,7 +79,7 @@ const path = Astro.url.pathname;
     // initialize pagefind on first focus
     if (!pagefindInitialized) {
       try {
-        window.pagefind = await import("/blog/pagefind/pagefind.js");
+        window.pagefind = await import("/pagefind/pagefind.js");
         await window.pagefind.init();
         pagefindInitialized = true;
       } catch (error) {
