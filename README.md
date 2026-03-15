@@ -2,24 +2,6 @@
 
 Spectre is a terminal-inspired theme for Astro, built using TypeScript and Astro.
 
-## Getting Started
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/louisescher/spectre/tree/master)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/louisescher/spectre/tree/master)
-
-Alternatively, you can create a new Astro project with Spectre like this:
-
-```bash
-# pnpm
-pnpm create astro@latest -- --template louisescher/spectre
-
-# pnpm
-pnpm create astro@latest --template louisescher/spectre
-
-# yarn
-yarn create astro --template louisescher/spectre
-```
-
 ## Features
 
 - 100 / 100 Lighthouse performance
