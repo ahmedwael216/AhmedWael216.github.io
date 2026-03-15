@@ -13,72 +13,24 @@ const openGraphOptionsSchema = z.object({
 	description: z.string().optional(),
 });
 
-const giscusMappingSchema = z.union([
-	z.literal("pathname"),
-	z.literal("url"),
-	z.literal("title"),
-	z.literal("og:title"),
-	z.literal("specific"),
-	z.literal("number"),
-]);
-
 const giscusObjectSchema = z
 	.object({
-		/**
-		 * The repository name.
-		 */
-		repository: z.string(),
 		/**
 		 * The repository's ID.
 		 */
 		repositoryId: z.string(),
 		/**
-		 * The category of the repository.
-		 */
-		category: z.string(),
-		/**
 		 * The category's ID.
 		 */
 		categoryId: z.string(),
-		/**
-		 * The mapping of the comments.
-		 */
-		mapping: giscusMappingSchema,
-		/**
-		 * The term to use for the comments.
-		 */
-		term: z.string().optional(),
-		/**
-		 * Whether the comments are strict.
-		 */
-		strict: z.boolean(),
-		/**
-		 * Whether reactions are enabled.
-		 */
-		reactionsEnabled: z.boolean(),
-		/**
-		 * Whether metadata should be emitted.
-		 */
-		emitMetadata: z.boolean(),
 		/**
 		 * The theme to use for the comments. Defaults to `https://spectre.louisescher.dev/styles/giscus`.
 		 */
 		theme: z.string().optional(),
 		/**
-		 * The language to use for the comments.
-		 */
-		lang: z.string(),
-		/**
 		 * Where the comments input should be placed. Default is `bottom`.
 		 */
 		commentsInput: z.union([z.literal("bottom"), z.literal("top")]).optional(),
-	})
-	.refine((data) => {
-		if (data.mapping === "specific" || data.mapping === "number") {
-			return !!data.term;
-		}
-
-		return true;
 	})
 	.optional();
 
@@ -125,7 +77,7 @@ export default function integration(
 		const likelyUntouchedConfig = Object.keys(giscusOpts).every((key) => {
 			const item = giscusOpts[key as keyof typeof giscusOpts];
 
-			return typeof item === "undefined" || item === false;
+			return typeof item === "undefined";
 		});
 
 		if (likelyUntouchedConfig) {
