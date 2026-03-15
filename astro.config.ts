@@ -20,7 +20,8 @@ const {
 
 // https://astro.build/config
 const config = defineConfig({
-	site: 'https://spectre.lou.gg',
+	site: 'https://ahmedwael216.github.io',
+	base: 'blog',
 	output: 'static',
 	integrations: [
 		expressiveCode({
@@ -54,10 +55,7 @@ const config = defineConfig({
 			// 	lang: GISCUS_LANG,
 			// },
 		}),
-	],
-	adapter: node({
-		mode: 'standalone',
-	}),
+	]
 });
 
 export default config;
