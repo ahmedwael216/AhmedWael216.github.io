@@ -79,7 +79,7 @@ const path = Astro.url.pathname;
     // initialize pagefind on first focus
     if (!pagefindInitialized) {
       try {
-        window.pagefind = await import("/pagefind/pagefind.js");
+        window.pagefind = await import("/blog/pagefind/pagefind.js");
         await window.pagefind.init();
         pagefindInitialized = true;
       } catch (error) {
