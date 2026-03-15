@@ -1,4 +1,3 @@
-import node from '@astrojs/node';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 import expressiveCode from 'astro-expressive-code';
@@ -20,8 +19,7 @@ const {
 
 // https://astro.build/config
 const config = defineConfig({
-	site: 'https://ahmedwael216.github.io',
-	base: 'blog',
+	site: 'https://ahmedwael216.github.io/blog',
 	output: 'static',
 	integrations: [
 		expressiveCode({
