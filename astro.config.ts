@@ -1,59 +1,52 @@
 import sitemap from '@astrojs/sitemap';
-import { defineConfig } from 'astro/config';
+import {defineConfig} from 'astro/config';
 import expressiveCode from 'astro-expressive-code';
-import { loadEnv } from 'vite';
-import spectre, { type GiscusMapping } from './package/src';
-import { spectreDark } from './src/ec-theme';
+import {loadEnv} from 'vite';
+import spectre from './package/src';
+import {spectreDark} from './src/ec-theme';
 
 const {
-	GISCUS_REPO,
-	GISCUS_REPO_ID,
-	GISCUS_CATEGORY,
-	GISCUS_CATEGORY_ID,
-	GISCUS_MAPPING,
-	GISCUS_STRICT,
-	GISCUS_REACTIONS_ENABLED,
-	GISCUS_EMIT_METADATA,
-	GISCUS_LANG,
+    GISCUS_REPO_ID,
+    GISCUS_CATEGORY_ID,
 } = loadEnv(process.env.NODE_ENV!, process.cwd(), '');
 
 // https://astro.build/config
 const config = defineConfig({
-	site: 'https://ahmedwael216.github.io/blog',
-	output: 'static',
-	integrations: [
-		expressiveCode({
-			themes: [spectreDark],
-		}),
-		sitemap(),
-		spectre({
-			name: 'Ahmed Wael',
-			openGraph: {
-				home: {
-					title: 'Ahmed Wael',
-					description: 'A quite place for a noisy brain.',
-				},
-				blog: {
-					title: 'Blog',
-					description: 'News and guides for Spectre.',
-				},
-				projects: {
-					title: 'Projects',
-				},
-			},
-			giscus: {
-				repository: GISCUS_REPO,
-				repositoryId: GISCUS_REPO_ID,
-				category: GISCUS_CATEGORY,
-				categoryId: GISCUS_CATEGORY_ID,
-				mapping: GISCUS_MAPPING as GiscusMapping,
-				strict: GISCUS_STRICT === '1',
-				reactionsEnabled: GISCUS_REACTIONS_ENABLED === '1',
-				emitMetadata: GISCUS_EMIT_METADATA === '1',
-				lang: GISCUS_LANG,
-			},
-		}),
-	]
+    site: 'https://ahmedwael216.github.io/blog',
+    output: 'static',
+    integrations: [
+        expressiveCode({
+            themes: [spectreDark],
+        }),
+        sitemap(),
+        spectre({
+            name: 'Ahmed Wael',
+            openGraph: {
+                home: {
+                    title: 'Ahmed Wael',
+                    description: 'A quite place for a noisy brain.',
+                },
+                blog: {
+                    title: 'Blog',
+                    description: 'News and guides for Spectre.',
+                },
+                projects: {
+                    title: 'Projects',
+                },
+            },
+            giscus: {
+                repository: "ahmedwael216/blog",
+                repositoryId: GISCUS_REPO_ID,
+                category: "Announcements",
+                categoryId: GISCUS_CATEGORY_ID,
+                mapping: "pathname",
+                strict: false,
+                reactionsEnabled: true,
+                emitMetadata: false,
+                lang: "en",
+            },
+        }),
+    ]
 });
 
 export default config;

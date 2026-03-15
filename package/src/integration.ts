@@ -117,9 +117,6 @@ export const optionsSchema = z.object({
 	 */
 	giscus: z.union([z.literal(false), giscusObjectSchema]),
 });
-
-export type GiscusMapping = z.infer<typeof giscusMappingSchema>;
-
 export default function integration(
 	options: z.infer<typeof optionsSchema>,
 ): AstroIntegration {
