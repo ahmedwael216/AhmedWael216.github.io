@@ -121,7 +121,9 @@ export default function integration(
 	options: z.infer<typeof optionsSchema>,
 ): AstroIntegration {
 	if (typeof options.giscus === "object") {
+		console.log('options.giscus', options.giscus);
 		const giscusOpts = (options.giscus as z.infer<typeof giscusObjectSchema>)!;
+		console.log('giscusOpts', giscusOpts);
 		const likelyUntouchedConfig = Object.keys(giscusOpts).every((key) => {
 			const item = giscusOpts[key as keyof typeof giscusOpts];
 
