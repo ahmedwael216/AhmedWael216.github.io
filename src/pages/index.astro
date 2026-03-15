@@ -9,15 +9,13 @@ import Icon from "../components/Icon.astro";
 import ImageGlow from "../components/ImageGlow.astro";
 import Layout from "../layouts/Layout.astro";
 
-const [posts, projects, about, workExperience, quickInfo, socials] =
-	await Promise.all([
-		getCollection("posts", (post) => post.data.draft !== true),
-		getCollection("projects"),
-		getEntry("other", "about"),
-		getCollection("workExperience"),
-		getCollection("quickInfo"),
-		getCollection("socials"),
-	]);
+const [posts, projects, about, workExperience, quickInfo] = await Promise.all([
+	getCollection("posts", (post) => !post.data.draft),
+	getCollection("projects"),
+	getEntry("other", "about"),
+	getCollection("workExperience"),
+	getCollection("quickInfo"),
+]);
 
 const { Content: About } = await render(about!);
 ---
@@ -58,22 +56,42 @@ const { Content: About } = await render(about!);
 		<Card>
 			<h3 class="no-mt">Socials</h3>
 			<ul class="overview-list">
-				{
-					socials.map((item) => (
-						<li>
-							<a href={item.data.link} class="socials-link">
-								<Icon
-									type={item.data.icon.type}
-									name={item.data.icon.name as any}
-									width={24}
-									height={24}
-									class="glow-icon"
-								/>
-								<span>{item.data.text}</span>
-							</a>
-						</li>
-					))
-				}
+				<li>
+					<a href="https://github.com/AhmedWael216" class="socials-link">
+						<Icon
+							type="lucide"
+							name="github"
+							width={24}
+							height={24}
+							class="glow-icon"
+						/>
+						<span>GitHub</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/ahmed-wael-571293175/" class="socials-link">
+						<Icon
+							type="lucide"
+							name="linkedin"
+							width={24}
+							height={24}
+							class="glow-icon"
+						/>
+						<span>Linked In</span>
+					</a>
+				</li>
+				<li>
+					<a href="mailto:ahmedwael216@protonmail.com" class="socials-link">
+						<Icon
+							type="lucide"
+							name="mail"
+							width={24}
+							height={24}
+							class="glow-icon"
+						/>
+						<span>E-mail</span>
+					</a>
+				</li>
 			</ul>
 		</Card>
 	</div>
