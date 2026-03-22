@@ -1,6 +1,6 @@
 ---
 title: The making of this blog
-date: 12-29-2024
+date: 3-22-2026
 description: A blog made in 2 hours and no cups of Tea
 image: ../assets/spectre.png
 info:

@@ -36,7 +36,7 @@ const projects = await getCollection("projects");
 					<a href={`/projects/${post.id}`} class="post-container">
 						<div class="post-header">
 							<h3>{post.data.title}</h3>
-							<span class="post-date">{post.data.date.toLocaleDateString()}</span>
+							<span class="post-date">{post.data.date.toLocaleDateString("en-GB")}</span>
 						</div>
 						<span>{post.data.description}</span>
 					</a>

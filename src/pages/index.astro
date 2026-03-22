@@ -134,7 +134,7 @@ const { Content: About } = await render(about!);
 								<div class="post-header">
 									<h3>{blog.data.title}</h3>
 									<span class="post-date">
-										{blog.data.createdAt.toLocaleDateString()}
+										{blog.data.createdAt.toLocaleDateString("en-GB")}
 									</span>
 								</div>
 								<span>{blog.data.description}</span>
@@ -164,7 +164,7 @@ const { Content: About } = await render(about!);
 								<div class="post-header">
 									<h3>{project.data.title}</h3>
 									<span class="post-date">
-										{project.data.date.toLocaleDateString()}
+										{project.data.date.toLocaleDateString("en-GB")}
 									</span>
 								</div>
 								<span>{project.data.description}</span>
