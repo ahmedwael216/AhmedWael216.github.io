@@ -9,8 +9,8 @@ import Icon from "../components/Icon.astro";
 import ImageGlow from "../components/ImageGlow.astro";
 import Layout from "../layouts/Layout.astro";
 
-const [posts, projects, about, workExperience, quickInfo] = await Promise.all([
-	getCollection("posts", (post) => !post.data.draft),
+const [blogs, projects, about, workExperience, quickInfo] = await Promise.all([
+	getCollection("blogs", (post) => !post.data.draft),
 	getCollection("projects"),
 	getEntry("other", "about"),
 	getCollection("workExperience"),
@@ -120,24 +120,24 @@ const { Content: About } = await render(about!);
 					height={24}
 					class="glow-icon"
 				/>
-				<h2>Latest Posts</h2>
+				<h2>Latest Blogs</h2>
 			</div>
 			<div class="content-container">
 				{
-					posts
+					blogs
 						.sort(
 							(a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime(),
 						)
 						.slice(0, 2)
-						.map((post) => (
-							<a href={`/blogs/${post.id}`} class="post-container">
+						.map((blog) => (
+							<a href={`/blogs/${blog.id}`} class="post-container">
 								<div class="post-header">
-									<h3>{post.data.title}</h3>
+									<h3>{blog.data.title}</h3>
 									<span class="post-date">
-										{post.data.createdAt.toLocaleDateString()}
+										{blog.data.createdAt.toLocaleDateString()}
 									</span>
 								</div>
-								<span>{post.data.description}</span>
+								<span>{blog.data.description}</span>
 							</a>
 						))
 				}

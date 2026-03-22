@@ -3,48 +3,13 @@ title: "Getting Started with Spectre"
 description: "Find out how to configure Spectre."
 image: "../assets/spectre.png"
 createdAt: 12-29-2024
-draft: false
+draft: true
 tags:
   - guide
   - Non-Tech
 ---
 
-Optionally, you can also add the `themeColor` and `twitterHandle` parameters next to the `name` parameter in the integration options.
-The theme color defaults to `#8c5cf5`. The Twitter handle doesn't have a default value, and the relevant meta tags will be omitted if it's not provided.
-
-### Comments
-
-This theme has comments powered by [giscus](https://giscus.app). If you want to use them, first configure your repository on their website. Then, add the `giscus` option and configure it based on the script tag you get from giscus:
-
-```ts {"        Add the info from giscus here:":7-18} title="astro.config.ts"
-export default defineConfig({
-  // ...
-  integrations: [
-    // ...
-    spectre({
-      // ...
-
-      giscus: {
-        repository: '...',
-        repositoryId: '...',
-        category: '...',
-        categoryId: '...',
-        mapping: '...',
-        strict: true | false,
-        reactionsEnabled: true | false,
-        emitMetadata: true | false,
-        lang: '...',
-      }
-    })
-  ]
-});
-```
-
-If you want to modify the giscus colors, you can do so in the `styles/giscus.css` file. If you do so, make sure to provide the theme as `https://your-site.tld/styles/giscus`. 
-
-Alternatively, you can change the `giscus.theme` option to one of the provided options by giscus.
-
-### Posts
+### Blogs
 
 Let's move on to the *real* content. The `posts/` directory is home to all your blog posts, written in MDX. To create a new post, simply create a new file! The filename will be used as the slug for the page.
 

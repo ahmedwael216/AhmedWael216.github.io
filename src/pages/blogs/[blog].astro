@@ -17,7 +17,7 @@ import Layout from "../../layouts/Layout.astro";
  *
  * @param post The post to estimate the reading time for
  */
-function timeToRead(post: CollectionEntry<"posts">): number {
+function timeToRead(post: CollectionEntry<"blogs">): number {
 	const numWords = (post.body || "")
 		.replace(/.*\[(.*?)\].*/gm, "$1")
 		.replace(/```.*?```/gms, "")
@@ -34,15 +34,15 @@ function timeToRead(post: CollectionEntry<"posts">): number {
 }
 
 interface Props {
-	post: CollectionEntry<"posts">;
+	post: CollectionEntry<"blogs">;
 }
 
 const { post } = Astro.props;
 
 export const getStaticPaths = (async () => {
-	const posts = await getCollection("posts", (post) => !post.data.draft);
+	const blogs = await getCollection("blogs", (post) => !post.data.draft);
 
-	return posts.map((post) => ({ params: { blog: post.id }, props: { post } }));
+	return blogs.map((post) => ({ params: { blog: post.id }, props: { post } }));
 }) satisfies GetStaticPaths;
 
 const { Content, headings } = await render(post);

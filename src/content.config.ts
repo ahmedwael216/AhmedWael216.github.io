@@ -45,8 +45,8 @@ const tags = defineCollection({
 	}),
 });
 
-const posts = defineCollection({
-	loader: glob({ base: "src/content/posts", pattern: "**/*.{md,mdx}" }),
+const blogs = defineCollection({
+	loader: glob({ base: "src/content/blogs", pattern: "**/*.{md,mdx}" }),
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
@@ -80,7 +80,7 @@ const projects = defineCollection({
 
 export const collections = {
 	tags,
-	posts,
+	blogs,
 	projects,
 	other,
 	quickInfo,
