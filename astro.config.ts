@@ -34,17 +34,17 @@ const config = defineConfig({
                     title: 'Projects',
                 },
             },
-            // giscus: {
-            //     repository: "ahmedwael216/AhmedWael216.github.io",
-            //     repositoryId: "R_kgDORn0CEg",
-            //     category: "Announcements",
-            //     categoryId: "DIC_kwDORn0CEs4C4dXE",
-            //     mapping: "pathname",
-            //     strict: false,
-            //     reactionsEnabled: true,
-            //     emitMetadata: false,
-            //     lang: "en",
-            // },
+            giscus: {
+                repository: "ahmedwael216/AhmedWael216.github.io",
+                repositoryId: "R_kgDORn0CEg",
+                category: "Announcements",
+                categoryId: "DIC_kwDORn0CEs4C4dXE",
+                mapping: "pathname",
+                strict: false,
+                reactionsEnabled: true,
+                emitMetadata: false,
+                lang: "en",
+            },
         }),
     ]
 });
