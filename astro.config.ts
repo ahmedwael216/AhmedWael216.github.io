@@ -3,12 +3,18 @@ import {defineConfig} from 'astro/config';
 import expressiveCode from 'astro-expressive-code';
 import spectre from './package/src';
 import {spectreDark} from './src/ec-theme';
+import mermaid from 'astro-mermaid';
 
 // https://astro.build/config
 const config = defineConfig({
     site: 'https://ahmedwael216.github.io',
     output: 'static',
     integrations: [
+        mermaid({
+            theme: 'dark',
+            autoTheme: true,
+            enableLog: false
+        }),
         expressiveCode({
             themes: [spectreDark],
         }),
@@ -28,17 +34,17 @@ const config = defineConfig({
                     title: 'Projects',
                 },
             },
-            giscus: {
-                repository: "ahmedwael216/AhmedWael216.github.io",
-                repositoryId: "R_kgDORn0CEg",
-                category: "Announcements",
-                categoryId: "DIC_kwDORn0CEs4C4dXE",
-                mapping: "pathname",
-                strict: false,
-                reactionsEnabled: true,
-                emitMetadata: false,
-                lang: "en",
-            },
+            // giscus: {
+            //     repository: "ahmedwael216/AhmedWael216.github.io",
+            //     repositoryId: "R_kgDORn0CEg",
+            //     category: "Announcements",
+            //     categoryId: "DIC_kwDORn0CEs4C4dXE",
+            //     mapping: "pathname",
+            //     strict: false,
+            //     reactionsEnabled: true,
+            //     emitMetadata: false,
+            //     lang: "en",
+            // },
         }),
     ]
 });
